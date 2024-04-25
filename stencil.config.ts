@@ -1,7 +1,13 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'stencil-v4-sc-nested-css-scope-id',
+  extras: {
+    experimentalSlotFixes: true,
+    experimentalScopedSlotChanges: true,
+  },
+  plugins: [sass()],
   outputTargets: [
     {
       type: 'dist',
@@ -21,6 +27,6 @@ export const config: Config = {
     },
   ],
   testing: {
-    browserHeadless: "new",
+    browserHeadless: 'new',
   },
 };

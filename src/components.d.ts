@@ -6,56 +6,71 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface MyInput {
+    }
+    interface MyMenu {
+    }
+    interface MyPopover {
+    }
+    interface MyTimepicker {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLMyInputElement extends Components.MyInput, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLMyInputElement: {
+        prototype: HTMLMyInputElement;
+        new (): HTMLMyInputElement;
+    };
+    interface HTMLMyMenuElement extends Components.MyMenu, HTMLStencilElement {
+    }
+    var HTMLMyMenuElement: {
+        prototype: HTMLMyMenuElement;
+        new (): HTMLMyMenuElement;
+    };
+    interface HTMLMyPopoverElement extends Components.MyPopover, HTMLStencilElement {
+    }
+    var HTMLMyPopoverElement: {
+        prototype: HTMLMyPopoverElement;
+        new (): HTMLMyPopoverElement;
+    };
+    interface HTMLMyTimepickerElement extends Components.MyTimepicker, HTMLStencilElement {
+    }
+    var HTMLMyTimepickerElement: {
+        prototype: HTMLMyTimepickerElement;
+        new (): HTMLMyTimepickerElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "my-input": HTMLMyInputElement;
+        "my-menu": HTMLMyMenuElement;
+        "my-popover": HTMLMyPopoverElement;
+        "my-timepicker": HTMLMyTimepickerElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface MyInput {
+    }
+    interface MyMenu {
+    }
+    interface MyPopover {
+    }
+    interface MyTimepicker {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "my-input": MyInput;
+        "my-menu": MyMenu;
+        "my-popover": MyPopover;
+        "my-timepicker": MyTimepicker;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
+            "my-menu": LocalJSX.MyMenu & JSXBase.HTMLAttributes<HTMLMyMenuElement>;
+            "my-popover": LocalJSX.MyPopover & JSXBase.HTMLAttributes<HTMLMyPopoverElement>;
+            "my-timepicker": LocalJSX.MyTimepicker & JSXBase.HTMLAttributes<HTMLMyTimepickerElement>;
         }
     }
 }
