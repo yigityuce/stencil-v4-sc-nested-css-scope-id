@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MyInput {
     }
+    interface MyListItem {
+    }
     interface MyMenu {
     }
     interface MyPopover {
@@ -21,6 +23,12 @@ declare global {
     var HTMLMyInputElement: {
         prototype: HTMLMyInputElement;
         new (): HTMLMyInputElement;
+    };
+    interface HTMLMyListItemElement extends Components.MyListItem, HTMLStencilElement {
+    }
+    var HTMLMyListItemElement: {
+        prototype: HTMLMyListItemElement;
+        new (): HTMLMyListItemElement;
     };
     interface HTMLMyMenuElement extends Components.MyMenu, HTMLStencilElement {
     }
@@ -42,6 +50,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-input": HTMLMyInputElement;
+        "my-list-item": HTMLMyListItemElement;
         "my-menu": HTMLMyMenuElement;
         "my-popover": HTMLMyPopoverElement;
         "my-timepicker": HTMLMyTimepickerElement;
@@ -49,6 +58,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MyInput {
+    }
+    interface MyListItem {
     }
     interface MyMenu {
     }
@@ -58,6 +69,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-input": MyInput;
+        "my-list-item": MyListItem;
         "my-menu": MyMenu;
         "my-popover": MyPopover;
         "my-timepicker": MyTimepicker;
@@ -68,6 +80,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
+            "my-list-item": LocalJSX.MyListItem & JSXBase.HTMLAttributes<HTMLMyListItemElement>;
             "my-menu": LocalJSX.MyMenu & JSXBase.HTMLAttributes<HTMLMyMenuElement>;
             "my-popover": LocalJSX.MyPopover & JSXBase.HTMLAttributes<HTMLMyPopoverElement>;
             "my-timepicker": LocalJSX.MyTimepicker & JSXBase.HTMLAttributes<HTMLMyTimepickerElement>;
